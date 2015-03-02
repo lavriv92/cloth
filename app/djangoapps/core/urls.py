@@ -1,9 +1,9 @@
 from django.conf.urls import patterns, url
 
-from . import views
+from .views import HomeView, ClothersView, ContactsView
 
 urlpatterns = patterns('',
-    url(r'^$', views.home, name='home'),
-    url(r'^clojures/$', views.clojures, name='clojures'),
-    url(r'^contacts/$', views.contacts, name='contacts'),
+    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^clothers/$', ClothersView.as_view(), name='clothers'),
+    url(r'^contacts/$', ContactsView.as_view(), name='contacts'),
 )

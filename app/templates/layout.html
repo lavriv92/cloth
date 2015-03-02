@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Clojures | {% block title %}{% endblock %}</title>
+    {% include 'partials/styles.html' %}
 </head>
 <body>
-    <header></header>
-    <div id="main">
-    {% block main %}
-    {% endblock main %}
-    <div>
+    <header>
+      <nav class="navbar navbar-static-top navbar-inverse">
+        <div class="container">
+          <div class="navbar-brand">
+            <a href="{% url 'core:home' %}">Closure</a>
+          </div>
+          <div>
+            {% include 'partials/nav.html' %}
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container"> 
+      <div id="main">
+        {% block main %}
+        {% endblock main %}
+      <div>
+    </div>
     <footer></footer>
+    {% include 'partials/scripts.html' %}
 </body>
 </html>  
